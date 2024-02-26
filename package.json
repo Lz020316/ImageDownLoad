@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run": "nodemon ./index.js"
+    "build": "npm install --os=linux --cpu=x64 sharp & npm install & node index.js"
   },
   "keywords": [],
   "author": "",

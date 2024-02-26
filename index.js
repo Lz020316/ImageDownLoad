@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');  
 const crypto = require('crypto');  
 const app = express();  
-const port = 3000;  
+const port = 6000;  
   
 app.use(express.static('public')); // 假设静态文件存放在 public 文件夹  
   
