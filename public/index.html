@@ -1,0 +1,87 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Batch Image Downloader</title>  
+<style>  
+  body {  
+    font-family: 'Arial', sans-serif;  
+    margin: 0;  
+    padding: 20px;  
+    background-color: #f5f5f5;  
+  }  
+    
+  .container {  
+    max-width: 400px;  
+    margin: 0 auto;  
+  }  
+    
+  .input-group {  
+    margin-bottom: 10px;  
+  }  
+    
+  input[type="text"] {  
+    width: 100%;  
+    padding: 10px;  
+    font-size: 16px;  
+    border-radius: 4px;  
+    border: 1px solid #ccc;  
+    box-sizing: border-box;  
+  }  
+    
+  .button-group {  
+    text-align: right;  
+  }  
+    
+  button {  
+    padding: 10px 20px;  
+    font-size: 16px;  
+    border: none;  
+    border-radius: 4px;  
+    background-color: #4CAF50; /* Green */  
+    color: white;  
+    cursor: pointer;  
+  }  
+    
+  button:hover {  
+    background-color: #45a049; /* Green darker */  
+  }  
+    
+  button:active {  
+    background-color: #4CAF50; /* Green */  
+  }  
+</style>  
+</head>  
+<body>  
+  
+<div class="container">  
+  <h2>Batch Image Downloader /（批量图像下载器）</h2>  
+  <div class="input-group">  
+    <label for="imageUrls">Enter image URLs (each on a new line) / 输入图像 URL（每个占新行）:</label>  
+    <textarea id="imageUrls" rows="5" cols="50"></textarea>  
+  </div>  
+  <div class="button-group">  
+    <button onclick="downloadImages()">Download（下载）</button>  
+  </div>  
+</div>  
+  
+<script>  
+function downloadImages() {  
+  const imageUrls = document.getElementById('imageUrls').value.split('\n');  
+  imageUrls.forEach(url => {  
+    const downloadUrl = `/download-image?url=${encodeURIComponent(url)}`;  
+    // Create a hidden <a> element to trigger the download  
+    const a = document.createElement('a');  
+    a.href = downloadUrl;  
+    a.download = 'image.jpg'; // You can change the filename if needed  
+    a.style.display = 'none';  
+    document.body.appendChild(a);  
+    a.click();  
+    document.body.removeChild(a);  
+  });  
+}  
+</script>  
+  
+</body>  
+</html>
