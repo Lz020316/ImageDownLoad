@@ -2,9 +2,9 @@
   "name": "imgdownloads",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "run": "nodemon ./app.js"
+    "run": "nodemon ./index.js"
   },
   "keywords": [],
   "author": "",
